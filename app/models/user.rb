@@ -1,0 +1,6 @@
+class User < ApplicationRecord
+  has_many :formulas
+  has_many :elements, through: :formulas
+  has_many :tags
+  has_many :notes
+end

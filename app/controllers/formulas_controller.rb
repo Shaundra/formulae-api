@@ -1,0 +1,2 @@
+class FormulasController < ApplicationController
+end
