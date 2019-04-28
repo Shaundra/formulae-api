@@ -29,6 +29,10 @@ ActiveRecord::Schema.define(version: 2019_04_24_215652) do
     t.string "title"
     t.integer "position"
     t.boolean "is_public"
+    t.string "source_url"
+    t.string "location_path"
+    t.string "content_type"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["formula_id"], name: "index_elements_on_formula_id"

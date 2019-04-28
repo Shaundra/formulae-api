@@ -10,3 +10,27 @@ tag_names.each do |name|
 end
 
 formula_1.notes.create(user: formula_1.user, content: "A note about learning React Hooks")
+
+
+elmts = [
+  {
+    source_url: 'https://www.youtube.com/embed/mxK8b99iJTg',
+    title: 'Intro to React Hooks',
+    content_type: 'video',
+  },
+  {
+    source_url: 'https://pbs.twimg.com/media/DyubqDoWwAAyanN.jpg',
+    title: 'What are Hooks?',
+    content_type: 'image',
+  },
+  {
+    content: "Two Rules of Hooks: Only Call Hooks at the Top Level, Only Call Hooks from React Functions",
+    title: 'Rules of Hooks',
+    content_type: 'text',
+  },
+]
+
+elmts.each_with_index do |elmt, idx|
+  elmt[:position] = idx
+  formula_1.elements.create(elmt)
+end
