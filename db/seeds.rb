@@ -34,3 +34,7 @@ elmts.each_with_index do |elmt, idx|
   elmt[:position] = idx
   formula_1.elements.create(elmt)
 end
+
+formula_2 = Formula.create(user: lady_mae, title: 'Weekend in Indio', is_public: false)
+
+formula_3 = Formula.create(user: lady_mae, title: 'Installing Spring Twists', is_public: false)

@@ -11,4 +11,14 @@ class FormulasController < ApplicationController
 
     render json: @formula
   end
+
+  def update
+    byebug
+  end
+
+  private
+
+  def find_formula
+    @formula = Formula.find(params[:id])
+  end
 end

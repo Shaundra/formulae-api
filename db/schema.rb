@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_24_215652) do
+ActiveRecord::Schema.define(version: 2019_04_30_004729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2019_04_24_215652) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "seek_to_time"
     t.index ["notable_type", "notable_id"], name: "index_notes_on_notable_type_and_notable_id"
     t.index ["user_id"], name: "index_notes_on_user_id"
   end
