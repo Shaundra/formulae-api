@@ -2,7 +2,7 @@ class NotesController < ApplicationController
   before_action :find_parent, only: [:create, :update]
 
   def create
-    @note = @parent.notes.create(
+    @note = @parent.notes.new(
       user: @user,
       content: note_params[:content],
       seek_to_time: note_params[:seek_to_time],
