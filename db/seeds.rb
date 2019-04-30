@@ -1,5 +1,6 @@
 lady_mae = User.create(name: 'ladyMae')
-formula_1 = Formula.create(user: lady_mae, title: 'Learning React Hooks', is_public: false)
+formula_1 = Formula.create(user: lady_mae, title: 'Learning React Hooks', is_public: false, description: 'Going to teach myself React Hooks. A gentle introduction, if you will.'
+)
 
 tag_names = ['Coding Concepts', 'Tutorials', 'React']
 
@@ -35,6 +36,6 @@ elmts.each_with_index do |elmt, idx|
   formula_1.elements.create(elmt)
 end
 
-formula_2 = Formula.create(user: lady_mae, title: 'Weekend in Indio', is_public: false)
+formula_2 = Formula.create(user: lady_mae, title: 'Weekend in Indio', is_public: false, description: 'Planning notes for April weekend in Indio!')
 
-formula_3 = Formula.create(user: lady_mae, title: 'Installing Spring Twists', is_public: false)
+formula_3 = Formula.create(user: lady_mae, title: 'Installing Spring Twists', is_public: false, description: 'Resources to learn how to install the Spring Twist hairstyle.')
