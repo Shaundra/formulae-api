@@ -12,6 +12,12 @@ class FormulasController < ApplicationController
     render json: @formula
   end
 
+  def create
+    @formula = Formula.create(formula_params)
+    # byebug
+    render json: @formula
+  end
+
   def update
     byebug
   end
@@ -20,5 +26,9 @@ class FormulasController < ApplicationController
 
   def find_formula
     @formula = Formula.find(params[:id])
+  end
+
+  def formula_params
+    params.require(:formula).permit(:title, :description, :is_public)
   end
 end
