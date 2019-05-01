@@ -15,7 +15,11 @@ class FormulasController < ApplicationController
   def create
     @formula = Formula.create(formula_params)
     # byebug
-    render json: @formula
+    if @formula.valid?
+      render json: @formula
+    else
+      render json: {error: 'Failed to create formula.'}, status: :not_acceptable
+    end
   end
 
   def update
