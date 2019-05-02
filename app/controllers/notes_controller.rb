@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
   before_action :find_parent, only: [:create, :update]
+  before_action :set_note, only: [:destroy]
 
   def create
     @note = @parent.notes.create(
@@ -15,7 +16,17 @@ class NotesController < ApplicationController
 
   end
 
+  def destroy
+    @note.destroy
+
+    render json: {message: 'Successfully deleted note.', status: 200}, status: :ok
+  end
+
   private
+
+  def set_note
+    @note = Note.find(params[:id])
+  end
 
   def find_parent
     if note_params[:notable_type] == 'Formula'
