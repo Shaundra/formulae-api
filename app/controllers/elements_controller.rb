@@ -3,7 +3,14 @@ class ElementsController < ApplicationController
   before_action :set_element, only: [:destroy]
 
   def create
-    @element = current_user.formulas.find(@parent.id).elements.create(element_params)
+    # if content_type == 'website', call method to run url through metainspector
+    # byebug
+    if element_params[:content_type] == 'website'
+      preview_content = Element.set_site_preview_params(element_params[:source_url])
+      @element = current_user.formulas.find(@parent.id).elements.create(element_params.merge(content: preview_content))
+    else
+      @element = current_user.formulas.find(@parent.id).elements.create(element_params)
+    end
 
     render json: @element
   end

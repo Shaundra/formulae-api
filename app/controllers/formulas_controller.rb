@@ -1,5 +1,4 @@
-class FormulasController < ApplicationController
-
+class FormulasController < ApplicationController  
   def index
     @formulas = Formula.all
 
