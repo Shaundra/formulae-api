@@ -4,6 +4,14 @@ class Element < ApplicationRecord
   has_many :element_tags
   has_many :tags, through: :element_tags
 
+  validates :source_url, presence: true, if: :needs_source_url?
+
+  def needs_source_url?
+    req_content_types = ['video', 'image', 'website']
+
+    req_content_types.include?(content_type )
+  end
+
   def self.set_site_preview_params(url)
     # byebug
     page = MetaInspector.new(url)
