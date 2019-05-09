@@ -1,6 +1,6 @@
 class ElementsController < ApplicationController
   before_action :find_parent, only: [:create]
-  before_action :set_element, only: [:destroy]
+  before_action :set_element, only: [:destroy, :update]
 
   def create
     # if content_type == 'website', call method to run url through metainspector
@@ -17,8 +17,14 @@ class ElementsController < ApplicationController
 
   def destroy
     @element.destroy
-    # navbar, delete notes, notes display, logout, tags OR edit note
+
     render json: {message: 'Successfully deleted element.', status: 200}, status: :ok
+  end
+
+  def update
+    @element.update(element_params)
+
+    render json: @element
   end
 
   private
