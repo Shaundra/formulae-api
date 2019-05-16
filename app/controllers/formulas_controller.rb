@@ -1,4 +1,4 @@
-class FormulasController < ApplicationController  
+class FormulasController < ApplicationController
   def index
     @formulas = Formula.all
 
@@ -12,7 +12,8 @@ class FormulasController < ApplicationController
   end
 
   def create
-    @formula = Formula.create(formula_params)
+    # byebug
+    @formula = current_user.formulas.create(formula_params)
     # byebug
     if @formula.valid?
       render json: @formula
