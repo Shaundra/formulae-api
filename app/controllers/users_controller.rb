@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    # byebug
     @user = User.create(user_params)
 
     if @user.valid?
@@ -25,6 +24,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     render json: @user, include: ['formulas.elements.notes', 'formulas.notes']
+  end
+
+  def profile
+    # receive JWT, decode it, return user
+    # byebug
+    render json: current_user, include: ['formulas.elements.notes', 'formulas.notes']
   end
 
   private
