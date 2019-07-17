@@ -1,24 +1,3 @@
-# README
+Formula(e) is a web application for meaningfully organizing digital content on a topic in one place. Created with Ruby on Rails (5), React (16), and vanilla CSS.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This repository contains the Rails API for the project.
